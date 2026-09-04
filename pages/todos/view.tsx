@@ -8,8 +8,7 @@ interface Props {
   notFoundId?: string;
 }
 
-// The todo id is read as a query parameter (?id=...), per the assignment spec,
-// rather than a dynamic route segment.
+ 
 export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
   const idParam = ctx.query.id;
   const id = Number(idParam);
