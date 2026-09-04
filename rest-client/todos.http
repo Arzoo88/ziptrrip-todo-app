@@ -1,0 +1,60 @@
+### Ziptrrip Todo API — REST Client requests
+### Open this file in VS Code with the "REST Client" extension installed,
+### run `npm run dev` first, then click "Send Request" above each block.
+
+@baseUrl = http://localhost:3000/api
+
+### 1. List all todos
+GET {{baseUrl}}/todos
+
+### 2. List only active (incomplete) todos
+GET {{baseUrl}}/todos?filter=active
+
+### 3. List only completed todos
+GET {{baseUrl}}/todos?filter=completed
+
+### 4. Create a todo
+# @name createTodo
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "Prepare demo for Ziptrrip interview",
+  "description": "Walk through CRUD APIs and both pages",
+  "priority": "high",
+  "dueDate": "2026-09-10"
+}
+
+### 5. Get a single todo by id (replace 1 with a real id from step 4's response)
+GET {{baseUrl}}/todos/1
+
+### 6. Update a todo (partial update — only send fields you want to change)
+PUT {{baseUrl}}/todos/1
+Content-Type: application/json
+
+{
+  "completed": true
+}
+
+### 7. Rename + reprioritize a todo
+PUT {{baseUrl}}/todos/1
+Content-Type: application/json
+
+{
+  "title": "Prepare demo for Ziptrrip interview (updated)",
+  "priority": "medium"
+}
+
+### 8. Delete a todo
+DELETE {{baseUrl}}/todos/1
+
+### 9. Error case: creating a todo with an empty title (expect 400)
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": ""
+}
+
+### 10. Error case: fetching a non-existent todo (expect 404)
+GET {{baseUrl}}/todos/999999
