@@ -1,7 +1,13 @@
 # Ziptrrip Todo App
 
 A todo application built for the Ziptrrip Backend Engineer take-home assignment.
+## Screenshots
 
+**Todo list**
+![Todo list](./screenshots/todo-list.png)
+
+**Todo detail**
+![Todo detail](./screenshots/todo-detail.png)
 **Stack:** Next.js (Pages Router) + TypeScript + SQLite (`better-sqlite3`) + Jest.
 
 Next.js was chosen so that a single codebase and a single `npm run dev` covers both
